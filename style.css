@@ -156,7 +156,7 @@ h1 {
 
 .amount>li:not(:last-child)>p {
     /* 배경의 하단 문자 구역나누는 선 */
-    border-right: 1px solid #e1e1e1;
+    border-right: 5px solid #e1e1e1;
 }
 
 /* main_text0 */
