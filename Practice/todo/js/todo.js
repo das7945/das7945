@@ -29,14 +29,10 @@ const setCurrentShowType = (newShowType) => currentShowType = newShowType
 // currentShowType는 뭐지???
 
 let todos = [];
-const setTodos = (newTodos) => {
-    todos = newTodos;
-}
-//
+const setTodos = (newTodos) => {todos = newTodos;}
 
 
-const getAllTodos = () => {
-    return todos;
+const getAllTodos = () => {return todos;
 }
 
 const getCompletedTodos = () => {
