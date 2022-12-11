@@ -1,6 +1,4 @@
 const todoInputElem = document.querySelector('.todo-input');
-// 본문에서 todo-input해당하는 첫번째 검색에 대하여 todoInputElem에 저장하라.
-// 하위 const는 다 같은 의미이며, querySelectorall의 경우라면 검색되는 모든 내용을 추출하여 순서대로 리스트[]형식으로 만들어라.
 const todoListElem = document.querySelector('.todo-list');
 const completeAllBtnElem = document.querySelector('.complete-all-btn');
 const leftItemsElem = document.querySelector('.left-items')
@@ -13,20 +11,14 @@ const clearCompletedBtnElem = document.querySelector('.clear-completed-btn');
 let id = 0;
 
 const setId = (newId) => { id = newId };
-//id는 newId와 같으며 해당 내용을 newId에 담아 setId를 실행시 함수를 호출하라.
-
 let isAllCompleted = false; // 전체 todos 체크 여부
-
 const setIsAllCompleted = (bool) => { isAllCompleted = bool };
-// isAllCompleted 와 bool는 같고 bool에 담고 setIsAllCompleted를 실행시 함수를 호출하라.
-// 전체 todos체크를 실패와 참으로 구분함.
+
 
 
 
 let currentShowType = 'all'; // all  | active | complete
 const setCurrentShowType = (newShowType) => currentShowType = newShowType
-// currentShowType은 newShowType와 같고 newShowTyped에 담아 setCurrentShowType를 실행시 함수를 호출하라.
-// currentShowType는 뭐지???
 
 let todos = [];
 const setTodos = (newTodos) => {todos = newTodos;}
