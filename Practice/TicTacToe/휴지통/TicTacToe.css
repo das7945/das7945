@@ -56,10 +56,11 @@ button:hover {
 
 .block:hover {
     cursor: pointer;
+    /* cursor: url("x.png"), auto; */
     background: #0ff30f;
 }
 
-.occupied:hover {
+s.occupied:hover {
     background: #ff3a3a;
 }
 

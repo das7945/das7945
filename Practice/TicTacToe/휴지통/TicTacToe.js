@@ -60,7 +60,16 @@ function updateblock(block, index) {
     options[index] = currentPlayer;
     //옵션내의 인덱스를 확인 후 현재플레이어로 설정
     block.textContent = currentPlayer;
+    mouseon(block);
 }   //원래 클릭한 블럭과 상관없이 동일함 
+
+function mouseon(tag) {
+    tag.style.cursor = "url(./p.png) 10 10, auto"
+
+}
+function mouseoff(tag) {
+    tag.style.cursor = "wait"
+}
 
 function changePlayer() {
     currentPlayer = (currentPlayer == "X") ? "O" : "X";  // O 참, X 거짓
@@ -109,6 +118,7 @@ function restartGame() {
     options = ["", "", "", "", "", "", "", "", ""];
     statusText.textContent = currentPlayer + ' turn';
     blocks.forEach(block => block.textContent = "");
+    blocks.forEach(block => mouseoff(block));
     running = true;
     // 리스타트버튼 클릭시 초기화
 }
