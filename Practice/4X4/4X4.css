@@ -49,6 +49,12 @@ button {
     transition: all 0.2s ease-in-out;
 }
 
+button:hover {
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+
 .block:hover {
     cursor: pointer;
     background: #0ff30f;

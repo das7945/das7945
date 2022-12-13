@@ -1,27 +1,25 @@
 const block = document.querySelectorAll(".block");
 const options = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-const startBtn = document.querySelector("#starBtn");
+const startBtn = document.querySelector("#startBtn");
 
 
 let num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let win = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0'
 
-let currentPlayer
+// let currentPlayer
 let running = false;
 
 
-// initializeGame();
-randomNum()
+initializeGame();
 
-// function initializeGame() {
-//     let running = true;
-//     startBtn = addEventListener("click", startGame);
-     
-// };
-
-
+function initializeGame() {
+    randomNum();
+    running = true;
+    startBtn.addEventListener("click",startGame);
+}
 
 function randomNum() {
+    // running = true;
     num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     let i = 0;
     while(i < 15) {
@@ -30,18 +28,13 @@ function randomNum() {
         }
         else{
             num[i] = r;
-           i++; 
+            i++; 
         }
     }
     document.querySelectorAll(".block").forEach((value, index) => value.innerText = num[index])
     document.querySelectorAll(".block").forEach((value, index) => value.addEventListener("click", click))
+    
 }
-
-// Array.prototype.forEach = function(fn) {
-//     for(let i in this) {
-//         fn(this[i], i)
-//     }
-// }
 
 function click() {
     let i = parseInt(this.id);
@@ -69,9 +62,20 @@ function click() {
             alert("Win!")
             randomNum();
         }, 1000);
+        running = false;
     }
 }
 
 function ran() { // 1~15
     return (Math.floor(Math.random()*15)+1);
 }
+
+function startGame() {
+    randomNum();
+    running = true;
+}
+
+// Array.prototype.forEach = function(fn) {
+    //     for(let i in this) {
+        //         fn(this[i], i)
+        
