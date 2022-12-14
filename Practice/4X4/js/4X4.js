@@ -6,6 +6,9 @@ const startBtn = document.querySelector("#startBtn");
 let num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let win = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0'
 
+let plus = [3, 7, 11, 15]
+let minus = [0, 4, 8, 12]
+
 // let currentPlayer
 let running = false;
 
@@ -38,11 +41,11 @@ function randomNum() {
 
 function click() {
     let i = parseInt(this.id);
-    if(num[i+1] == 0) {
+    if(num[i+1] == 0 && !plus.includes(i)) {
         num[i+1] = num[i];
         num[i] = 0;
         console.log("+1")
-    }else if(num[i-1] == 0) {
+    }else if(num[i-1] == 0 && !minus.includes(i)) {
         num[i-1] = num[i];
         num[i] = 0;
         console.log("-1")
@@ -79,3 +82,11 @@ function startGame() {
     //     for(let i in this) {
         //         fn(this[i], i)
         
+
+setInterval(() => block.forEach((value) => {
+    if(value.innerText == 0) {
+        value.className = "block off"
+    }else (
+        value.className = "block"
+    )
+}) ,10)
