@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>weather</title>
+</head>
+<body>
+<h1>weather</h1>
+<table border="1">
+<thead>
+    <tr>
+        <th>날짜</th>
+        <th>지역</th>
+        <th>온도</th>
+        <th>기상</th>
+        <th>습도</th>
+        <button id="btn1">데이터 가져오기!</button>
+    </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+
+
+<h2>AJAX GET 요청</h2>
+<button id="btn2">요청</button><br>
+<textarea id="ta" cols="80" rows="10"></textarea>
+
+
+
+<h1>AJAX - 공공데이터 오픈API 호출</h1>
+날짜: <input id="base_date" name="nase_date"><br>
+x좌표: <input id="nx" name="nx"><br>
+y좌표: <input id="ny" name="ny"><br>
+
+<button id="btn3">요청</button><br>
+<textarea id="ta2" cols="80" rows="10"></textarea>
+
+
+
+<script>
+"use strict"
+// 웹페이지를 만들 때 AJAX를 이용하여 여러 조각을 붙여서 만들 수 있다.
+//       
+var tbody = document.querySelector("tbody");
+
+document.querySelector("#btn1").onclick = () => {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+
+                var arr = JSON.parse(xhr.responseText);
+                
+                // 배열을 반복하여 값을 꺼낸다.
+                for (var b of arr) {
+                	// tr 태그를 만든다.
+                	var tr = document.createElement("tr");
+                	
+                	// tr 태그에 게시물 데이터를 넣는다.
+                	tr.innerHTML = "<td>" + b.day + "</td>" + 
+                	   "<td>" + b.location + "</td>" + 
+                	   "<td>" + b.temp + "</td>" +
+                	   "<td>" + b.weather + "</td>";
+                	
+                	// tr 태그를 tbody의 자식 태그로 붙인다.
+                	tbody.appendChild(tr);
+                }
+            }
+        }
+    };
+    xhr.open("GET", "http://localhost:3000/weather", true);
+    xhr.send();
+};
+</script>
+
+
+
+
+<script>
+"use strict"
+
+var ta = document.querySelector("#ta");
+
+document.querySelector("#btn2").onclick = () => {
+    var xhr = new XMLHttpRequest();
+    
+    // GET 요청은 데이터를 URL에 붙인다. 
+    xhr.open("GET", "http://127.0.0.1:3000/weather", false);
+    xhr.send();
+    ta.value = xhr.responseText;
+};
+
+</script>
+
+
+
+<script>
+    "use strict"
+    
+    var base_date = document.querySelector("#base_date");
+    var nx = document.querySelector("#nx");
+    var ny = document.querySelector("#ny");
+    var ta2 = document.querySelector("#ta2");
+    
+    document.querySelector("#btn3").onclick = () => {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET",
+        "http://localhost:3000/proxy?base_date=" + base_date.value +
+        "&nx=" + nx.value + "&ny=" + ny.value, false);
+        xhr.send();
+        ta2.value = xhr.responseText;
+    };
+    
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
