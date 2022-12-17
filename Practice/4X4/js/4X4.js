@@ -1,13 +1,24 @@
 const block = document.querySelectorAll(".block");
-const options = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+// const options = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 const startBtn = document.querySelector("#startBtn");
 
 
 let num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let win = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0'
 
+
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0]
+
 let plus = [3, 7, 11, 15]
 let minus = [0, 4, 8, 12]
+
+
+function ran() { // 1~15
+    return (Math.floor(Math.random()*15)+1);
+}
+
+
+
 
 // let currentPlayer
 let running = false;
@@ -35,8 +46,7 @@ function randomNum() {
         }
     }
     document.querySelectorAll(".block").forEach((value, index) => value.innerText = num[index])
-    document.querySelectorAll(".block").forEach((value, index) => value.addEventListener("click", click))
-    
+    document.querySelectorAll(".block").forEach((value, index) => value.addEventListener("click", click))    
 }
 
 function click() {
@@ -54,11 +64,12 @@ function click() {
         num[i] = 0;
         console.log("+4")
     }else if(num[i-4] == 0) {
-        num[i-4] = num[i];
+              num[i-4] = num[i];
         num[i] = 0;
         console.log("-4")
     }
-    document.querySelectorAll(".block").forEach((value, index) => value.innerText = num[index]) // 배열 정보랑 버튼이랑 매칭
+    document.querySelectorAll(".block").forEach((value, index) => value.innerText = num[index]) 
+    // 배열 정보랑 버튼이랑 매칭
     
     if(num.toString() == win) {
         setTimeout(() => {
@@ -69,9 +80,7 @@ function click() {
     }
 }
 
-function ran() { // 1~15
-    return (Math.floor(Math.random()*15)+1);
-}
+
 
 function startGame() {
     randomNum();

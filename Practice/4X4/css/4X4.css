@@ -16,7 +16,7 @@ span {
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    background: #eee; 
+    /* background: #eee;  */
 }
 
 .off {
@@ -46,8 +46,7 @@ span {
     moz-user-select:none;  /* 드래그방지 */
     ms-user-select:none;  /* 드래그방지 */
     user-select:none;  /* 드래그방지 */
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
 
 button {
@@ -65,14 +64,16 @@ button {
     transition: all 0.2s ease-in-out;
 }
 
+.block:hover {
+    cursor: pointer;
+    background: #0ff30f;
+}
+
 button:hover {
     cursor: pointer;
     background: black;
     color: white;
 }
 
-.block:hover {
-    cursor: pointer;
-    background: #0ff30f;
-}
+
 
