@@ -1,0 +1,204 @@
+* {
+  font-family: 'Do Hyeon', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  webkit-user-select:none;  /* 드래그방지 */
+  moz-user-select:none;  /* 드래그방지 */
+  ms-user-select:none;  /* 드래그방지 */
+  user-select:none;  /* 드래그방지 */
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+}
+
+.section {
+  position: relative;
+  width: 500px;
+  height: 800px;
+  border-radius: 50px;
+  /* background-color: #99ccff; */
+  border: 2px solid black;  
+
+}
+
+.address {
+  position: absolute;
+  margin-left: 75px;
+  margin-top: 80px;
+  width: 350px;
+  height: 80px;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 25px;
+  /* border: 2px solid black; */
+  /* background-color: green; */
+}
+
+.time {
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 160px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+    /* padding-top: 15px; */
+  /* border: 2px solid black; */
+  /* background-color: yellow; */
+}
+
+.weather {
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 250px;
+  width: 300px;
+  height: 280px;
+  text-align: center;
+  padding-top: 15px;
+  /* border: 2px solid black; */
+  /* background-color: blue; */
+}
+
+.weatherImg {
+  position: absolute;
+  margin-left: 55px;
+  margin-top: -40px;
+  width: 190px;
+  height: 190px;
+  text-align: center;
+  padding-top: 15px;
+  /* border: 2px solid black; */
+  /* background-color: gray; */
+}
+
+.weatherTmp {
+  position: absolute;
+  margin-left:45px;
+  margin-top: 200px;
+  width: 80px;
+  height: 50px;
+  text-align: right;
+  padding-top: 10px;
+  font-size: 25px;
+  /* border: 2px solid black; */
+  /* background-color: pink; */
+}
+
+.Tmp1 {
+  position: absolute;
+  margin: -10px 0px 0px -20px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../image/Tmp1.png");
+  background-size: cover;
+}
+
+.weatherReh {
+  position: absolute;
+  margin-left: 180px;
+  margin-top: 200px;
+  width: 80px;
+  height: 50px;
+  text-align: right;
+  padding-top: 10px;
+  font-size: 25px;
+  /* border: 2px solid black; */
+  /* background-color: green; */
+}
+
+.Reh1 {
+  position: absolute;
+  margin: -10px 0px 0px -20px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../image/Reh1.png");
+  background-size: cover;
+}
+
+
+.othertmp {
+  position: absolute;
+  margin-left: -92.5px;
+  margin-top: 310px;
+  width: 480px;
+  height: 150px;
+  text-align: center;
+  padding-top: 15px;
+  /* border: 2px solid black; */
+  /* background-color: pink; */
+}
+
+.other {
+  display: flex;
+  position: absolute;
+  margin: -1px 0px 0px 1px;  
+  width: 480px;
+  height: 150px;
+  /* border: 2px solid black; */
+  /* background-color: black; */
+}
+
+#tmp1, #tmp2, #tmp3, #tmp4, #tmp5 {
+  display: flex;
+  position: relative;
+  flex: 1px;
+  text-align: center;
+  width: 320px;
+  height: 150px;
+  font-size: 25px;
+  /* border: 1px solid black; */
+  /* background: green; */
+}
+
+#tmp1, #tmp2, #tmp3, #tmp4{
+  border-right: 1px solid black;
+}
+
+.name {
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  margin: 20px 0px 0px 30px;
+  font-size: 18px; 
+  /* background: yellow; */
+}
+
+.im {
+  position: absolute;
+  margin: 48px 0px 0px 20px;
+  clear: left;    
+  width: 50px;
+  height: 50px;
+  /* background: green; */
+}
+
+.tm {
+  position: absolute;
+  margin: 105px 0px 0px 10px;
+  width: 35px;
+  height: 20px;
+  /* background: pink; */
+  /* border: 1px solid black; */
+  font-size: 15px;
+  text-align: right;
+}
+
+.reh {
+  position: absolute;  
+  margin: 105px 0px 0px 45px;
+  width: 35px;
+  height: 20px;
+  /* background: black; */
+  /* border: 1px solid black; */
+  font-size: 15px;
+  text-align: right;
+}
+
