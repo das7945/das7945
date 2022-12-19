@@ -28,6 +28,7 @@ app.get('/proxy2', (req, res) => {
     url : openApiUrl
   }, (error, response, body) => {
     res.send(body);
+    console.log(openApiUrl)
   });       
 
 }); 
