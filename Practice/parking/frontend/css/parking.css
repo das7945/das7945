@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "twayair";
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "twayair" !important;
+}
+#main{
+  text-align: center;
+  border: 1px solid black;
+  margin : 50px;
+}
+
+h2 {
+  text-align: right;
+  font-weight:bolder;
+  font-size:45px;
+  color: rgba(255, 68, 0, 0.815);
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}
+
+#box {
+  background-color: rgb(243, 244, 245);
+}
+
+#box1 {
+  box-shadow: 5px 5px 10px  rgb(206, 205, 205);
+  margin-left: 15px;
+}
+
+#box2 {
+  margin-left: 30px;
+  box-shadow: 5px 5px 10px  rgb(206, 205, 205);
+}
+
+#gangnammap {
+  /* border: 1px red solid; */
+  min-width: 650px;
+  min-height: 450px;
+  margin: 100px 100px;
+  float: left;
+  background-image: url(../images/gangnamgu.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#accordion {
+  /* border: 1px red solid; */
+  width: 350px;
+  min-height: 620px;
+  display: inline-block;
+}
+
+#accordion > div {
+  font-size: 14px;
+}
+
+#btn {
+  cursor: pointer;
+}
+
+.apgujung {
+  /* border: 2px solid red; */
+  width: 90px;
+  height: 32px;
+  margin-top: 20px;
+  margin-left: 145px;
+  position: absolute;
+  cursor: pointer;
+ }
+
+ .sinsa {
+  /* border: 2px solid red; */
+  border-radius: 8px;
+  width: 58px;
+  height: 30px;
+  margin-top: 65px;
+  margin-left: 168px;
+  position: absolute;
+  cursor: pointer;
+ }
+ .chungdam {
+  /* border: 2px solid red; */
+  width: 85px;
+  height: 40px;
+  margin-top: 57px;
+  margin-left: 250px;
+  position: absolute;
+  cursor: pointer;
+ }
+.nonhyeon {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 78px;
+  height: 50px;
+  margin-top: 110px;
+  margin-left: 170px;
+  position: absolute;
+  cursor: pointer;
+}
+.samsung {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 90px;
+  height: 50px;
+  margin-top: 112px;
+  margin-left: 270px;
+  position: absolute;
+  cursor: pointer;
+}
+.yeoksam {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 80px;
+  height: 60px;
+  margin-top: 180px;
+  margin-left: 200px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.daechi {
+  /* border: 2px solid red; */
+  border-radius: 30px;
+  width: 90px;
+  height: 70px;
+  margin-top: 180px;
+  margin-left: 300px;
+  position: absolute;
+  cursor: pointer;
+}
+.dogok {
+  /* border: 2px solid red; */
+  border-radius: 20px;
+  width: 70px;
+  height: 35px;
+  margin-top: 250px;
+  margin-left: 230px;
+  position: absolute;
+  cursor: pointer;
+}
+.gaepo {
+  /* border: 2px solid red; */
+  border-radius: 20px;
+  width: 80px;
+  height: 90px;
+  margin-top: 275px;
+  margin-left: 300px;
+  position: absolute;
+  cursor: pointer;
+}
+.ilwon {
+  /* border: 2px solid red; */
+  width: 47px;
+  height: 100px;
+  margin-top: 220px;
+  margin-left: 400px;
+  position: absolute;
+  cursor: pointer;
+}
+.suseo {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 80px;
+  height: 50px;
+  margin-top: 250px;
+  margin-left: 455px;
+  position: absolute;
+  cursor: pointer;
+}
+.suseo2 {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 30px;
+  height: 50px;
+  margin-top: 270px;
+  margin-left: 455px;
+  position: absolute;
+  cursor: pointer;
+}
+.jagok {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 70px;
+  height: 35px;
+  margin-top: 324px;
+  margin-left: 450px;
+  position: absolute;
+  cursor: pointer;
+}
+.jagok2 {
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  width: 60px;
+  height: 35px;
+  margin-top: 305px;
+  margin-left: 500px;
+  position: absolute;
+  cursor: pointer;
+}
+.segok {
+  /* border: 2px solid red; */
+  width: 100px;
+  height: 40px;
+  margin-top: 385px;
+  margin-left: 470px;
+  position: absolute;
+  cursor: pointer;
+}
+.yulhyeon {
+  /* border: 2px solid red; */
+  border-radius: 20px;
+  width: 70px;
+  height: 35px;
+  margin-top: 345px;
+  margin-left: 525px;
+  position: absolute;
+  cursor: pointer;
+}

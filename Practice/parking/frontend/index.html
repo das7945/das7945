@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Parking lot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="./css/parking.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="../backend/node_modules/sweetalert2/dist/sweetalert2.min.css">
+  <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
+    </symbol>
+    <symbol id="github" viewBox="0 0 16 16">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+    </symbol>
+  </svg>
+
+  <header class="py-3 mb-3 border-bottom position-relative w-75 p-3 top-0 start-50 translate-middle-x ">
+    <div class="container-fluid d-grid gap-3 align-items-center " style="grid-template-columns: 1fr 2fr;">
+      <div class="dropdown">
+        <svg class="bi me-2" width="40" height="32"><img src="./images/gangnam.jpeg" width="45%" height="" alt="강남구청"></svg>
+      </div>
+
+      <div class="d-flex align-items-center">
+        <form class="w-100 me-3" role="search" action="https://www.google.com/search">
+          <h2>주찾장</h2>
+        </form>
+
+        <div class="flex-shrink-0 dropdown">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
+            <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17 1.247 0 3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container pb-3 w-75 p-3" id="box">
+    <div class="d-flex justify-content-center;">
+      <div class="bg-light border rounded-3" id="box1">      
+      
+        <div id="gangnammap">
+          <div id="btn" class="segok" onclick="seven(49, 101, 101, 101, 101 ,101, 101)"></div>
+          <div id="btn" class="dogok" onclick="seven(32, 12, 42, 101, 101, 101, 101)"></div>
+          <div id="btn" class="yulhyeon" onclick="seven(17, 101, 101, 101, 101, 101, 101)"></div>
+          <div id="btn" class="apgujung" onclick="seven(19, 29, 101, 101, 101, 101, 101)"></div>
+          <div id="btn" class="chungdam" onclick="seven(7, 8, 31, 101, 101, 101, 101)"></div>
+          <div id="btn" class="nonhyeon" onclick="seven(0, 1, 4, 34, 101, 101, 101)"></div>
+          <div id="btn" class="sinsa" onclick="seven(5, 6, 22, 36, 101, 101, 101)"></div>
+          <div id="btn" class="ilwon" onclick="seven(21, 44, 47, 48, 101, 101, 101)"></div>
+          <div id="btn" class="yeoksam" onclick="seven(11, 23, 24, 27, 30, 101, 101)"></div>
+          <div id="btn" class="gaepo" onclick="seven(37, 38, 39, 40, 41, 43, 46)"></div>
+          <div id="btn" class="daechi" onclick="seven(9, 10, 15, 16, 18, 25, 33)"></div>
+          <div id="btn" class="samsung" onclick="seven(2, 3, 13, 14, 26, 28, 45)"></div>
+          <div id="btn" class="suseo" onclick="seven(101, 101, 101, 101, 101, 101, 101)"></div>
+          <div id="btn" class="suseo2" onclick="seven(101, 101, 101, 101, 101, 101, 101)"></div>
+          <div id="btn" class="jagok" onclick="seven(101, 101, 101, 101, 101, 101, 101)"></div>
+          <div id="btn" class="jagok2" onclick="seven(101, 101, 101, 101, 101, 101, 101)"></div>
+        </div>               
+      </div>
+
+      <div class="bg-light border rounded-3" id="box2">  
+        <div class="container">
+          <div id="accordion">
+            <h3 id="title1"></h3>
+            <div id="text1"></div>
+            <h3 id="title2"></h3>
+            <div id="text2"></div>
+            <h3 id="title3"></h3>
+            <div id="text3"></div>
+            <h3 id="title4"></h3>
+            <div id="text4"></div>
+            <h3 id="title5"></h3>
+            <div id="text5"></div>
+            <h3 id="title6"></h3>
+            <div id="text6"></div>
+            <h3 id="title7"></h3>
+            <div id="text7"></div>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
+   
+  <div class="container position-relative">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top fixed-bottom w-75 p-3 bottom-0 start-50 translate-middle-x">
+      <div class="col-md-4 d-flex align-items-center" style="width: 600px;">
+        <a href="https://www.ncloud.com/?language=ko-KR" target="_blank"  class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          <svg class="bi" width="5" height="24"><img src="https://www.ncloud.com/public/img/logo-m.png" width="65%" alt="네이버클라우드" style="float:left"></svg>
+        </a>
+        <span class="mb-3 mb-md-0 text-muted" style="float:left; position:absolute; margin-left: 230px;">&copy; 네이버 클라우드 AIaas 1기</span>
+      </div>
+  
+      <ul class="nav justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-muted" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="차민주" href="https://github.com/chaminju927">
+          <svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
+        <li class="ms-3"><a class="text-muted" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="서영훈"  href="https://github.com/darktemi">
+          <svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
+        <li class="ms-3"><a class="text-muted" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="한대호"  href="https://github.com/das7945">
+          <svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
+        <li class="ms-3"><a class="text-muted" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="오병현"  href="https://github.com/ohbyunghyun">
+          <svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
+      </ul>
+      </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="./js/parking.js"></script>
+<script>
+  $(() => {
+    $( "#accordion" ).accordion()
+  });
+  </script>
+</body>
+
+</html>
