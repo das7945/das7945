@@ -75,3 +75,20 @@ Java사용자 설치, 설정 및 SpringBoot프로젝트 만들기_2
 PDF경로 : 4.Java_Programming (p.20~32)
 
 //////////////////////////////////////////////////////////////////////////////////////
+
+22-12-28
+
+Java
+    - 문법 예제 프로젝트 준비(eomcs-java-lang)
+    - 문법 응용 실정 프로젝트 준비(myapp)
+    - 백엔드 프로젝트 준비(backend-app)
+    - 프론트엔드 프로젝트 준비(frontend-app)
+    - Eclipse IDE 사용 준비
+    - Gradle 빌트 스크립트와 Task 사용법
+    - 소스, 클래스블록, .class 파일, 패키지, 디렉토리 관계 
+
+예제파일 경로 : eomcs-java-lang/app/src/main/java/com/eomcs/lang/ex03/Exam0350까지
+
+PDF경로 : 4.Java_Programming (p.33~49)
+
+//////////////////////////////////////////////////////////////////////////////////////
